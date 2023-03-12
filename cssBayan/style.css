@@ -87,3 +87,10 @@ span {
 .accordion__item-input:checked  + .accordion__item-label  p {
     color: black;
 }
+
+.accordion__item:active .accordion__item-content span,
+.accordion__item:active .accordion__item-content p,
+.accordion__item:active .accordion__item-img {
+    filter: opacity(0.75);
+    color: blue;
+}
