@@ -15,16 +15,7 @@ body {
 
 .accordion {
     flex: 1 1 auto;
-    max-width: 50vw;
-}
-
-.accordion:hover p {
-    color: black;
-    transition: 1s ease;
-}
-
-.accordion:hover span {
-    opacity: 1;
+    max-width: 80vw;
 }
 
 .accordion-title {
@@ -34,10 +25,6 @@ body {
 .accordion__item-label {
     font-size: 1.5rem;
     color: blue;
-}
-
-.accordion__item-label:hover {
-    cursor: pointer;
 }
 
 .accordion__item-content {
@@ -61,23 +48,12 @@ span {
 .accordion__item-img {
     display: block;
     max-height: 0;
-    margin: 0 auto;
+    margin: 0.5rem auto;
     transition: 0.5s ease;
-}
-
-.accordion__item:hover .accordion__item-img {
-    max-height: 30rem;
-    margin: 0 auto;
-    transition: 0.5s ease;
-}
-
-.accordion__item:hover .accordion__item-content span {
-    transition: 0.5s ease;
-    transform: rotate(45deg);
 }
 
 .accordion__item-input:checked + .accordion__item-label > .accordion__item-img {
-    max-height: 30rem;
+    max-height: 50rem;
 }
 
 .accordion__item-input:checked + .accordion__item-label  span {
@@ -93,4 +69,70 @@ span {
 .accordion__item:active .accordion__item-img {
     filter: opacity(0.75);
     color: blue;
+}
+
+@media (hover: hover) {
+    .accordion__item-label:hover {
+        cursor: pointer;
+    }
+
+    .accordion__item:hover .accordion__item-content span {
+        transform: rotate(45deg);
+    }
+
+    .accordion__item:hover .accordion__item-img {
+        max-height: 50rem;
+    }
+
+    .accordion:hover span {
+        opacity: 1;
+    }
+
+    .accordion:hover p {
+        color: black;
+        transition: 1s ease;
+    }
+
+    @media only screen and (min-width: 1181px) and (max-width: 1920px) {
+        .accordion__item:hover .accordion__item-img {
+            max-height: 35rem;
+        }
+    }
+
+    @media only screen and (min-width: 569px) and (max-width: 1180px) {
+        .accordion__item:hover .accordion__item-img {
+            max-height: 13rem;
+        }
+    }
+
+    @media only screen and (max-width: 568px) {
+        .accordion__item:hover .accordion__item-img {
+            max-height: 10rem;
+        }
+    }
+}
+@media only screen and (min-width: 1181px) and (max-width: 1920px) {
+    .accordion__item-input:checked + .accordion__item-label > .accordion__item-img {
+        max-height: 35rem;
+    }
+}
+
+@media only screen and (min-width: 569px) and (max-width: 1180px) {
+    .accordion__item-label {
+        font-size: 1em;
+    }
+
+    .accordion__item-input:checked + .accordion__item-label > .accordion__item-img {
+        max-height: 13rem;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .accordion__item-label {
+        font-size: 0.8em;
+    }
+
+    .accordion__item-input:checked + .accordion__item-label > .accordion__item-img {
+        max-height: 10rem;
+    }
 }
